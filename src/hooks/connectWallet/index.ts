@@ -14,7 +14,9 @@ const useConnectWalletBtn = () => {
 
   useEffect(() => {
     // FIND BUTTON
-    const button = document.getElementById("connectwallet");
+    const button = document.querySelector(
+      "button[aria-label='CONNECT WALLET']"
+    );
 
     const event = (e: MouseEvent) => {
       e.preventDefault();
