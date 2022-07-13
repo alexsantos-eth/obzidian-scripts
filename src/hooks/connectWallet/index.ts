@@ -28,10 +28,7 @@ const useConnectWalletBtn = () => {
 
     // SET BUTTON EVENTS AND TEXT
     if (button) {
-      (button as HTMLAnchorElement).parentElement!.addEventListener(
-        "click",
-        event
-      );
+      (button as HTMLAnchorElement).addEventListener("click", event);
       button!.textContent = address.length
         ? `${address.substring(0, 5)} ... ${address.substring(5, 10)}`
         : "CONNECT WALLET";
@@ -40,10 +37,7 @@ const useConnectWalletBtn = () => {
     // REMOVE LISTENERS
     return () => {
       if (button) {
-        (button as HTMLAnchorElement).parentElement!.removeEventListener(
-          "click",
-          event
-        );
+        (button as HTMLAnchorElement).removeEventListener("click", event);
       }
     };
   }, [connectWallet, disconnectWallet, address, path]);
